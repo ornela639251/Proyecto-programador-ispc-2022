@@ -1,5 +1,5 @@
 # Proyecto-programador-ispc-2022
-proyecyo de materia programador
+proyecto de materia programador
 
 
 3. Introducción a las BD: 
