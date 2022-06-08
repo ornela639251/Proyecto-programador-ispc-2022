@@ -7,11 +7,17 @@ proyecto de materia programador
 
 Sistema integrado por un conjunto de programas o aplicaciones que permite guardar un conjunto de información almacenada, que nos permite consultar, insertar, modificar y borrar esa información en forma sistematizada (automatizada/digitalizada).  Una base de datos no implica solamente guardar información, también debe garantizar la integridad de los datos.
 
-**SGBD o DBMS** (siglas en inglés)**:** Software específico o grupo de programas que permiten crear y administrar BD y además actúa como intermediario entre usuario, aplicaciones y BD. Sirve para definir, construir y manipular una BD. Mantiene la integridad de los datos y permite tanto almacenarlos como posteriormente acceder a ellos de forma rápida y estructurada. EJEMPLOS: MySQL, MariaDB, Microsoft SQL Server, OracleDatabase, mongoDB.  
+**SGBD o DBMS** (siglas en inglés)**:** 
+
+Software específico o grupo de programas que permiten crear y administrar BD y además actúa como intermediario entre usuario, aplicaciones y BD. Sirve para definir, construir y manipular una BD. Mantiene la integridad de los datos y permite tanto almacenarlos como posteriormente acceder a ellos de forma rápida y estructurada. EJEMPLOS: MySQL, MariaDB, Microsoft SQL Server, OracleDatabase, mongoDB.  
 
 Cuando surgen las BD modelo relacional se estandariza la estructura (ISO y ANSI). Las 3 partes o modelos que componen SGBD:
+
+
     -Interno o físico: Datos físicos, archivos RAW (Archivos de lectura y escritura en 0 y 1). Es mitad software y mitad hardware.
+    
     -Conceptual: Se define la estructura de la BBDD, de la aplicación o sistema desarrollado.
+    
     -Externo: Conecta al usuario o aplicación c la base de datos a través de una interfaz gráfica por ejemplo. Es el "Panel de control". Ej: Workbeanch(MySQL),                   Enterprise y SQLDeveloper(Oracle).
 
 
