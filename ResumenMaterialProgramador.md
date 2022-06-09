@@ -23,7 +23,7 @@ Cuando surgen las BD modelo relacional se estandariza la estructura (ISO y ANSI)
 
 ### 4. Sistemas Gestores de Base de Datos:
 
-1.1 Sistemas de Información orientados a procesos.
+**1.1 Sistemas de Información orientados a procesos.**
 
 Éstos consistían en un conjunto de programas que definían y trabajaban sus propios datos. Los datos se
 almacenan en archivos y los programas manejan esos archivos para obtener la información. Si la
@@ -66,7 +66,7 @@ seguridad uniformes.
 acceda a él.
 
 
-1.2 Sistemas de Información orientados a los datos. Bases de Datos. 
+**1.2 Sistemas de Información orientados a los datos. Bases de Datos.** 
 
 En esos sistemas los datos se almacenan en una única estructura lógica que es utilizable por las aplicaciones. 
 A través de esa estructura se accede a los datos que son comunes a todas las aplicaciones.
@@ -114,7 +114,7 @@ comerciales del mercado.
 
 
 
-2. Arquitectura de los Sistemas Gestores de Bases de Datos
+**2. Arquitectura de los Sistemas Gestores de Bases de Datos**
 
 Un SGBD es el software que permite a los usuarios procesar, describir, administrar y recuperar los datos almacenados en una base de datos. 
 Entre las herramientas que proporciona están:
@@ -143,7 +143,7 @@ caso de fallos en el sistema.
 - Herramientas para la exportación e importación: de datos. 
 
 
-2.1 Niveles de abstracción de una base de datos. 
+**2.1 Niveles de abstracción de una base de datos.** 
 
 Nivel externo o de visión: es el más cercano a los usuarios, se describen varios
 esquemas externos o vistas de usuarios. Cada esquema describe la parte de la BD que interesa a un
@@ -162,7 +162,7 @@ del mundo real y en el que también aparece la forma de relacionarse los datos. 
 
 
 
-3. Componentes de los Sistemas Gestores de Bases de Datos 
+**3. Componentes de los Sistemas Gestores de Bases de Datos** 
 
 Lenguajes de los SGBD
 
@@ -210,9 +210,9 @@ interactivamente instrucciones del LMD desde un terminal, también pueden ir emb
 de programación de alto nivel. Estos lenguajes permiten especificar los datos a obtener en una consulta,
 o los datos a modificar, mediante sentencias sencillas.
 
-3.1 Recursos humanos de las bases de datos
+**3.1 Recursos humanos de las bases de datos**
 
-*Informáticos
+*Informáticos*
 Lógicamente son los profesionales que definen y preparan la base de datos.
 
 - Directivos/as. Organizadores y coordinadores del proyecto a desarrollar y máximos responsables
@@ -230,7 +230,7 @@ usuario de la base de datos.
 
 - Equipo de mantenimiento. Encargados de dar soporte a los usuarios en el trabajo diario.
 
-*Usuarios
+*Usuarios*
 
 - Expertos. Utilizan el lenguaje de manipulación de datos (DML) para acceder a la base de
 datos.
@@ -242,12 +242,10 @@ datos.
 aplicación que permite consultar ciertos datos.
 
 
-**3.1 Recursos humanos de las bases de datos.**  
-Intervienen muchas personas en el desarrollo y manipulación de una base de datos:   
--Informáticos: directivos/as, analistas, administradores/as de las bases de datos, desarrolladores/as o programadores/as y equipo de mantenimiento.   
--Usuarios: expertos/as, habituales, ocasionales. 
+*El Administrador de la Base de Datos DBA*  
 
-El Administrador de la Base de Datos DBA: será el encargado de crear los usuarios que se conectarán a la BD. En la administración de una BD siempre hay que procurar que haya el menor número de administradores, a ser posible una sola persona. El objetivo principal de un DBA es garantizar que la BD cumple los fines previstos por la organización y efectuar tareas de explotación como vigilar el trabajo diario colaborando en la información y resolución de las dudas de los usuarios de la BD. 
+Será el encargado de crear los usuarios que se conectarán a la BD. En la administración de una BD siempre hay que procurar que haya el menor número de administradores, a ser posible una sola persona.  
+El objetivo principal de un DBA es garantizar que la BD cumple los fines previstos por la organización y efectuar tareas de explotación como vigilar el trabajo diario colaborando en la información y resolución de las dudas de los usuarios de la BD. 
 
 **3.2 Estructura multicapa.**
 El proceso que realiza un SGBD está en realidad formado por varias capas que actúan como interfaces entre el usuario y los datos: facilidades de usuario, capa de acceso a datos,diccionario de datos,núcleo y sistema operativo.   
