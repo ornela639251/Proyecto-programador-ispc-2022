@@ -1,17 +1,17 @@
 5. Diseño de bases de datos relacionales
 En las bases de datos se ha establecido el aspecto de un diseño. Es un ciclo de desarrollo que consta de tres etapas de diseño: el diseño conceptual, el diseño lógico y el diseño físico. 
 
-3.1. Etapas de diseño
+3.1. **Etapas de diseño**
 La metodología de diseño de bases de datos relacionales se ha consolidado a lo largo de los años satisfaciendo las propiedades de generalidad (independencia de la plataforma hardware/software), calidad del producto (precisión, completitud y eficacia) y facilidad de uso.
  
 Consta de las siguientes etapas:
 1. Diseño conceptual. Su objetivo es definir las entidades y las relaciones entre ellos de forma abstracta..
 2. Diseño lógico. Su objetivo es definir el esquema de la base de datos según el modelo que implementa el SGBD objetivo. 
 3. Diseño físico. Su objetivo es definir el esquema físico de la base de datos de forma que se den todas las instrucciones para que un DBA pueda implementar la base de datos sin ninguna ambigüedad. 
- 3.2. Diseño conceptual
+3.2. **Diseño conceptual**
 En este apartado se estudia y se tiene como resultado el modelo entidad-relación que permite diseñar el esquema conceptual de una BD. A lo largo de este apartado se usará un ejemplo de aplicación correspondiente a las necesidades de una secretaría de un centro docente, en la que hay alumnos matriculados en asignaturas y profesores que las imparten en ciertas aulas. Los alumnos consiguen una nota determinada en cada asignatura en que están matriculados.
  
-3.2.1. Concepto
+3.2.1.  **Concepto**
 Entidad: Es el menor objeto con significado en una instancia. Por ejemplo, para el diseño de una BD de la secretaría de un centro docente, el alumno con los siguientes datos se constituye una entidad.:
                             DNI = 01234567Z,
                             Nombre y apellidos = Manuel Vázquez Prieto,
@@ -37,7 +37,7 @@ Clave Primaria: Es la clave candidata que distingue el usuario para identificar 
 •	Relación. Es una correspondencia entre dos o más entidades. Se habla de relaciones binarias cuando la correspondencia es entre dos entidades, ternarias cuando es entre tres, y así sucesivamente.
 •	Tipos de relación. Representan a todas las posibles relaciones entre entidades del mismo tipo.
  
- 3.2.2. Diagramas entidad-relación (E-R)
+ 3.2.2. **Diagramas entidad-relación (E-R)**
 El diseño del modelo E-R a partir del análisis inicial no es directo. A un mismo análisis le corresponden muchos diseños "candidatos". Hay varios criterios, pero ninguno es definitivo. 
 De un buen diseño depende:
 •	Eficiencia: Es muy importante en las BD cuando se manejan grandes cantidades de datos.
@@ -45,7 +45,7 @@ De un buen diseño depende:
 •	Flexibilidad: Se refiere a que el diagrama sea fácil de modificar.
 Los componentes básicos de los diagramas E-R son los atributos, los tipos de entidades y los tipos de relaciones.
  
-3.2.3. Elección de los tipos de entidad y sus atributos
+3.2.3. **Elección de los tipos de entidad y sus atributos**
 De la especificación del problema de la secretaría se deduce que va ha haber un tipo de entidad alumnos, pero no cuáles son sus atributos. ¿Debe incluir las asignaturas en las que está matriculado? La respuesta es no y hacerlo así sería un grave error. Aparte de la idea 'filosófica’ (cada asignatura es un objeto con significado propio, es decir, una entidad), al mezclar en una sola entidad alumnos y asignaturas cometemos cuatro errores:
  
     1. Un alumno no tiene una asignatura asociada sino un conjunto de asignaturas asociadas. En cambio, sí tiene un DNI asociado, una dirección asociada, etc. Por tanto las entidades serán de la forma
@@ -78,8 +78,7 @@ Por tanto, hay que distinguir entre el tipo de entidad Alumnos y el tipo de enti
                                • Aulas: Edificio y Número
 Aún nos falta un atributo, que es la nota: ¿Dónde se coloca? En Alumnos no porque un alumno tiene muchas notas, tantas como asignaturas en las que esté matriculado. En Asignaturas no porque en la misma asignatura están matriculados muchos alumnos. Va a ser un atributo del tipo de relación matrícula.
  
-
-3.2.4. Elección de los tipos de relación
+3.2.4. **Elección de los tipos de relación**
 El primer tipo de relación es la Matrícula que relaciona cada alumno con las asignaturas en las que está matriculado. Además, está relación tiene un atributo, nota, que se asocia cada tupla de la relación.
 El segundo tipo de relación es Supervisa que va de Profesores a Profesores y que incluye los papeles Supervisor y Supervisado. 
 La última es Imparte, que relaciona cada profesor con la asignatura que imparte y el aula en la que da esa asignatura. Aquí también surgen varias posibilidades:
@@ -87,7 +86,7 @@ La última es Imparte, que relaciona cada profesor con la asignatura que imparte
             b) Hacer una relación ternaria entre profesores, aulas y asignaturas.
             c) Hacer tres relaciones binarias: Profesores-Asignaturas, Profesores-Aulas, Asignaturas-Aulas.
  
- 3.2.5. Adelanto de las restricciones de integridad
+ 3.2.5.  **Adelanto de las restricciones de integridad**
 El modelo E-R puede definir numerosas restricciones de integridad sobre los tipos de entidades y tipos de relaciones. Por ejemplo, en la relación Supervisa un profesor puede tener a lo sumo un supervisor
 
 Las restricciones son parte del diseño de la base de datos igual que los tipos de entidades o de relaciones. Los SGBD se encargan de comprobar que la instancia verifica las restricciones más usuales
@@ -95,7 +94,7 @@ Las restricciones son parte del diseño de la base de datos igual que los tipos 
 Un tipo de restricción de integridad que interesa conocer en esta etapa es la restricción de clave. Una restricción clave consiste en imponer que un conjunto de atributos sea el que define unívocamente a una fila de un tipo de entidades. 3.3. Diseño lógico
 El diseño lógico es la segunda etapa del diseño de bases de datos en general y de las bases de datos relacionales en particular. En nuestro caso, las BD relacionales, el resultado de esta etapa es un esquema relacional basado en un modelo relacional. 
  
-3.3.1. El modelo relacional
+3.3.1. **El modelo relacional**
 Este modelo fue creado por Codd a principios de los 70 al que dotó de una sólida base teórica en base a la relación o tabla. Es importante no confundir la tabla con las relaciones del modelo E-R. En este modelo no se distingue entre tipos de entidades y tipos de relaciones porque la idea es que una relación o tabla expresa la relación entre los tipos de valores que contiene.
  
 A continuación se introducen los conceptos de este modelo:
@@ -106,7 +105,7 @@ A continuación se introducen los conceptos de este modelo:
  • Clave. Igual que en el modelo E-R. Hay que darse cuenta que en el modelo relacional todas las tablas deben tener claves, y que algunas tablas van a representar relaciones del esquema E-R.
 • Instancia de una relación. Son conjuntos de entidades. Cada entidad se representa como una tupla. Cada componente de la tupla corresponde con el valor del atributo correspondiente, según el orden enunciado en el esquema de la relación.
  
-3.3.2. Paso de un esquema E-R a un esquema relacional
+3.3.2. **Paso de un esquema E-R a un esquema relacional**
 La forma de traducir cada uno de los elementos que aparecen en el modelo E-R a un esquema relacional.
  
 Tipos de entidades
@@ -138,7 +137,7 @@ En este caso, la clave de R debe ser la clave primaria de c2. Es decir, en la re
 c) Varias a varias
 Éste es el caso más general en el que no se puede imponer ninguna restricción además de la ya indicada de clave.
  
-3.3.3. Restricciones de integridad
+3.3.3. **Restricciones de integridad**
 Hay dos: restricciones de integridad referencial y restricciones de participación total.
 Las claves y las restricciones de integridad referencial son características que se expresan directamente en la práctica totalidad de los SGBD relacionales. Estos sistemas se ocupan automáticamente de que no se violen estas restricciones. Sin embargo, no ocurre lo mismo con las de participación total y otras restricciones, como se verá en el tema dedicado a las restricciones de integridad.
  
@@ -148,7 +147,7 @@ Al traducir un tipo de relación R, en cualquier instancia de R se debe cumplir 
 Restricciones de participación total
 Cuando cada valor de un tipo de entidad debe aparecer en un tipo de relación, como Alumnos en Matrícula, significa que, además de la restricción de integridad referencial comentada en el apartado anterior, se debe cumplir que todo valor de DNI en Alumnos debe aparecer en el atributo DNI de Matrícula. 
  
-3.3.4. Cuestiones de diseño
+3.3.4. **Cuestiones de diseño**
 Generalmente se combinan por motivos de rendimiento. Un inconveniente de esta combinación es que, dado que no se exige participación total de Personas en Nacida, no tendremos información del país de nacimiento de algunas personas, y en la tabla Personas va a aparecer un valor NULL (nulo) en el atributo PaísNac, que indica que no se dispone de esa información. 
 Es un valor especial que se debe tratar con 
   • Ausencia de información.
