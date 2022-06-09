@@ -18,7 +18,7 @@ Cuando surgen las BD modelo relacional se estandariza la estructura (ISO y ANSI)
     
     -Conceptual: Se define la estructura de la BBDD, de la aplicación o sistema desarrollado.
     
-    -Externo: Conecta al usuario o aplicación c la base de datos a través de una interfaz gráfica por ejemplo. Es el "Panel de control". Ej: Workbeanch(MySQL),                   Enterprise y SQLDeveloper(Oracle).
+    -Externo: Conecta al usuario o aplicación c la base de datos a través de una interfaz gráfica por ejemplo. Es el "Panel de control". Ej: Workbeanch(MySQL), Enterprise y SQLDeveloper(Oracle).
 
 
 ### 4. Sistemas Gestores de Base de Datos:
