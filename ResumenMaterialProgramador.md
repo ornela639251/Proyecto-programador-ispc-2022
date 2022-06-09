@@ -23,6 +23,225 @@ Cuando surgen las BD modelo relacional se estandariza la estructura (ISO y ANSI)
 
 ### 4. Sistemas Gestores de Base de Datos:
 
+1.1 Sistemas de Información orientados a procesos.
+
+Éstos consistían en un conjunto de programas que definían y trabajaban sus propios datos. Los datos se
+almacenan en archivos y los programas manejan esos archivos para obtener la información. Si la
+estructura de los datos de los archivos cambia, todos los programas que los manejan se deben
+modificar.
+La definición de los datos se encuentra codificada dentro de los programas de
+aplicación en lugar de almacenarse de forma independiente, y además el control del acceso y la
+manipulación de los datos vienen impuesto por los programas de aplicación.
+
+La única ventaja, es que los procesos son independientes por lo que la modificación de uno no
+afectaba al resto. 
+
+Inconvenientes de un sistema de gestión de archivos:
+
+- Redundancia e inconsistencia de los datos: se produce porque los archivos son creados por
+distintos programas y van cambiando a lo largo del tiempo, es decir, pueden tener distintos
+formatos y los datos pueden estar duplicados en varios sitios.
+
+- Dependencia de los datos física-lógica: Cualquier cambio en esa estructura implica al programador identificar, modificar y probar todos los
+programas que manipulan esos archivos.
+
+- Dificultad para tener acceso a los datos: Cada vez que se necesite una consulta que no fue prevista en el inicio implica la necesidad de codificar el programa
+de aplicación necesario. 
+
+- Separación y aislamiento de los datos: Al estar repartidos en varios archivos, y tener
+diferentes formatos, es difícil escribir nuevos programas que aseguren la manipulación de los datos
+correctos.
+
+- Dificultad para el acceso concurrente: En un sistema de gestión de archivos es
+complicado que los usuarios actualicen los datos simultáneamente.
+
+- Dependencia de la estructura del archivo con el lenguaje de programación: pues la
+estructura se define dentro de los programas. Esto implica que los formatos de los archivos sean
+incompatibles.
+
+- Problemas en la seguridad de los datos: Ya que cada aplicación se crea independientemente; es por tanto muy difícil establecer criterios de
+seguridad uniformes. 
+
+- Problemas de integridad de datos (datos inconsistentes): El mismo dato puede tener valores distintos según qué aplicación
+acceda a él.
+
+
+1.2 Sistemas de Información orientados a los datos. Bases de Datos. 
+
+En esos sistemas los datos se almacenan en una única estructura lógica que es utilizable por las aplicaciones. 
+A través de esa estructura se accede a los datos que son comunes a todas las aplicaciones.
+Cuando una aplicación modifica un dato, dicho dato la modificación será visible para el resto de
+aplicaciones. 
+
+Ventajas
+
+- Independencia de los datos y los programas y procesos. Esto permite modificar los datos
+sin modificar el código de las aplicaciones.
+
+- Menor redundancia. No hace falta tanta repetición de datos. Sólo se indica la forma en la que se
+relacionan los datos.
+
+- Integridad de los datos. Mayor dificultad de perder los datos o de realizar incoherencias con
+ellos.
+
+- Mayor seguridad en los datos. Al permitir limitar el acceso a los usuarios. Cada tipo de usuario
+podrá acceder a unas cosas.
+
+- Datos más documentados. Gracias a los metadatos que permiten describir la información de la
+base de datos.
+
+- Acceso a los datos más eficiente. La organización de los datos produce un resultado más
+óptimo en rendimiento.
+
+- Menor espacio de almacenamiento. Gracias a una mejor estructuración de los datos.
+
+- Acceso simultáneo a los datos. Es más fácil controlar el acceso de usuarios de forma
+concurrente. 
+
+
+Desventajas
+
+- Instalación costosa. El control y administración de bases de datos requiere de un software y
+hardware poderoso.
+
+- Requiere personal cualificado. Debido a la dificultad de manejo de este tipo de sistemas.
+
+- Implantación larga y difícil. Debido a los puntos anteriores. La adaptación del personal es
+mucho más complicada y lleva bastante tiempo.
+
+- Ausencia de estándares reales. Lo cual significa una excesiva dependencia hacia los sistemas
+comerciales del mercado. 
+
+
+
+2. Arquitectura de los Sistemas Gestores de Bases de Datos
+
+Un SGBD es el software que permite a los usuarios procesar, describir, administrar y recuperar los datos almacenados en una base de datos. 
+Entre las herramientas que proporciona están:
+
+- Herramientas para la creación y especificación de los datos: Especificación de la estructura, el tipo de los datos, las restricciones y relaciones
+entre ellos mediante lenguajes de definición de datos. Toda esta información se almacena en el
+diccionario de datos.
+
+- Herramientas para administrar y crear la estructura física: requerida en las unidades de
+almacenamiento.
+
+- Herramientas para la manipulación de los datos: de las bases de datos, para añadir,
+modificar, suprimir o consultar datos.
+
+- Herramientas de recuperación: en caso de desastre.
+
+- Herramientas para la creación de copias de seguridad: para restablecer la información en
+caso de fallos en el sistema.
+
+- Herramientas para la gestión de la comunicación: de la base de datos.
+
+- Herramientas para la creación de aplicaciones: que utilicen esquemas externos de los datos.
+
+- Herramientas de instalación: de la base de datos.
+
+- Herramientas para la exportación e importación: de datos. 
+
+
+2.1 Niveles de abstracción de una base de datos. 
+
+Nivel externo o de visión: es el más cercano a los usuarios, se describen varios
+esquemas externos o vistas de usuarios. Cada esquema describe la parte de la BD que interesa a un
+grupo de usuarios.
+Los esquemas externos los realizan las programadoras.
+El conjunto de todas las vistas de usuario es lo que se denomina esquema externo
+global. 
+
+-Nivel interno o físico: Esta es la forma en la que realmente están almacenados los datos.  Describe la estructura física de la BD mediante un esquema interno. Este
+esquema se especifica con un modelo físico y describe los detalles de cómo se almacenan físicamente los datos: los archivos que contienen la información, su organización, 
+los métodos de acceso a los registros, los tipos de registros, la longitud, los campos que los componen, etcétera.
+Esta visión sólo la requiere el administrador.
+
+-Nivel conceptual: Ese nivel se sitúa entre el físico y el externo. Se trata de un esquema teórico de los datos en el que figuran organizados en estructuras reconocibles
+del mundo real y en el que también aparece la forma de relacionarse los datos. Este esquema es el paso que permite modelar un problema real a su forma correspondiente en el ordenador.
+
+
+
+3. Componentes de los Sistemas Gestores de Bases de Datos 
+
+Lenguajes de los SGBD
+
+  -Lenguaje de definición de datos (LDD o DDL): se utiliza para especificar el esquema de la BD, las
+vistas de los usuarios y las estructuras de almacenamiento.
+Es el que define el esquema conceptual y el esquema interno. Lo utilizan los diseñadores y los
+administradores de la BD. 
+
+Permite definir las tres estructuras de la base de datos
+(relacionadas con los tres niveles de abstracción).
+
+• Estructura interna
+• Estructura conceptual
+• Estructura externa 
+
+La función de definición sirve pues para crear, eliminar o modificar metadatos.
+
+Mediante ese lenguaje:
+• Se definen las estructuras de datos
+• Se definen las relaciones entre los datos
+• Se definen las reglas que han de cumplir los datos
+
+  -Lenguaje de manipulación de datos (LMD o DML): se utilizan para leer y actualizar los datos de la
+BD. Es el utilizado por los usuarios para realizar consultas, inserciones, eliminaciones y modificaciones.
+Los hay procedurales, en los que el usuario será normalmente un programador y especifica las
+operaciones de acceso a los datos llamando a los procedimientos necesarios. Estos lenguajes acceden a
+un registro y lo procesan.
+Las sentencias de un DML procedural están embebidas en un lenguaje de alto nivel llamado anfitrión.
+Las BD jerárquicas y en red utilizan estos DML procedurales.
+Mediante ese lenguaje se puede:
+• Añadir datos
+• Eliminar datos
+• Modificar datos
+• Buscar datos
+Actualmente se suele distinguir aparte la función de buscar datos en la base de datos (función de
+consulta). Para lo cual se proporciona un lenguaje de consulta de datos o DQL.
+
+  -Lenguaje de control de datos (LCD o DCL): Mediante esta función los administradores poseen
+mecanismos para proteger los datos; de modo que se permite a cada usuario ver ciertos datos y otros
+no; o bien usar ciertos recursos concretos de la base de datos y prohibir otros. El lenguaje que implementa
+esta función es el lenguaje de control de datos o DCL.
+
+  -No procedurales son los lenguajes declarativos. En muchos SGBD se pueden introducir
+interactivamente instrucciones del LMD desde un terminal, también pueden ir embebidas en un lenguaje
+de programación de alto nivel. Estos lenguajes permiten especificar los datos a obtener en una consulta,
+o los datos a modificar, mediante sentencias sencillas.
+
+3.1 Recursos humanos de las bases de datos
+
+*Informáticos
+Lógicamente son los profesionales que definen y preparan la base de datos.
+
+- Directivos/as. Organizadores y coordinadores del proyecto a desarrollar y máximos responsables
+del mismo.
+
+- Analistas. Son los encargados de controlar el desarrollo de la base de datos aprobada por la
+dirección. Normalmente son además los diseñadores de la base de datos y los directores de la programación de la misma.
+
+- Administradores de las bases de datos. Encargados de crear el esquema interno de la
+base de datos, que incluye la planificación de copia de seguridad, gestión de usuarios y permisos y
+creación de los objetos de la base de datos.
+
+- Desarrolladores o programadores. Encargados de la realización de las aplicaciones de
+usuario de la base de datos.
+
+- Equipo de mantenimiento. Encargados de dar soporte a los usuarios en el trabajo diario.
+
+*Usuarios
+
+- Expertos. Utilizan el lenguaje de manipulación de datos (DML) para acceder a la base de
+datos.
+
+- Habituales. Utilizan las aplicaciones creadas por los desarrolladores para consultar y actualizar los
+datos.
+
+- Ocasionales. Son usuarios que utilizan un acceso mínimo a la base de datos a través de una
+aplicación que permite consultar ciertos datos.
+
+
 **3.1 Recursos humanos de las bases de datos.**  
 Intervienen muchas personas en el desarrollo y manipulación de una base de datos:   
 -Informáticos: directivos/as, analistas, administradores/as de las bases de datos, desarrolladores/as o programadores/as y equipo de mantenimiento.   
