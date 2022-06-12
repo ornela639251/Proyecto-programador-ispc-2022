@@ -2,6 +2,20 @@
 proyecto de materia programador
 
 
+Historia y evolución de los SGBD II
+Década de los 80 – SGBD Relacionales:
+En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
+Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
+Imponiéndose frente a los SGBD (sistemas gestores de base de datos) anteriores como IMS de IBM, IDS de Bull y DMS de Univac, entre otros, que eran totalmente centralizados y demasiado complejos e inflexibles, cuya utilización requería un personal muy cualificado.
+SQL comenzó a ser el modelo estándar de las industrias con su base de datos bajo un sistema de tablas (filas y columnas) ya que su nivel de programación era sencillo y su nivel relativamente bajo. El sistema de bases de datos relacionales fue un éxito comercial y como también lo fue la venta de ordenadores estimulando el mercado de las BD.
+El dominio de Oracle en el mercado fue casi total hasta la aparición de SQL Server de Microsoft. Posteriormente durante los '90 fueron apareciendo nuevos sistemas de SGBD Relacionales como PostgreSQL, My SQL y Firebird gestando así las BD orientadas a objetos.
+
+Década de los 90: Distribución, C/S y 4GL:
+A finales de los '80 y principios de los '90 el sector empresarial se encontró con que debido a la gran cantidad de BD y SGBD surge la necesidad de tener una visión global que Permitir interrelacionar las diferentes aplicaciones y las distintas BD
+
+Continuará…
+
+
 ### 3. Introducción a las BD: 
 **BD:** 
 
