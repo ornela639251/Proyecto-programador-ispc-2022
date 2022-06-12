@@ -1,8 +1,8 @@
 ## Proyecto-programador-ispc-2022
-proyecto de materia programador
+ proyecto de materia programador
 
 
-Historia y evolución de los SGBD II
+###Historia y evolución de los SGBD II
 Década de los 80 – SGBD Relacionales:
 En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
 Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
@@ -12,6 +12,8 @@ El dominio de Oracle en el mercado fue casi total hasta la aparición de SQL Ser
 
 Década de los 90: Distribución, C/S y 4GL:
 A finales de los '80 y principios de los '90 el sector empresarial se encontró con que debido a la gran cantidad de BD y SGBD surge la necesidad de tener una visión global que Permitir interrelacionar las diferentes aplicaciones y las distintas BD
+
+####Pude MODIFICAR TXT
 
 Continuará…
 
