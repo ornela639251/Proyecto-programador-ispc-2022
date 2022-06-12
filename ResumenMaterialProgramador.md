@@ -2,7 +2,7 @@
  proyecto de materia programador
 
 
-### 2. Historia y evolución de los SGBD II
+### Historia y evolución de los SGBD II
 Década de los 80 – SGBD Relacionales:
 En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
 Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
@@ -298,7 +298,7 @@ Tratan de ser un híbrido entre el modelo relacional y el orientado a objetos. E
 **4.6 Bases de datos NoSQL.** 
 Se agrupan las bases de datos pensadas para grabar los datos de manera veloz para así poder atender a miles de peticiones. La idea es que los datos apenas necesitan validarse y relacionarse y lo importante es la disponibilidad de la propia base de datos. El nombre NoSQL, hace referencia a que este modelo de bases de datos rompe con el lenguaje SQL (el lenguaje de las bases de datos relacionales, las bases de datos dominantes hasta la actualidad) para poder manipular los datos con lenguajes de otro tipo.  
 
-### 4. Diseño de Base de Datos Relacionales:
+### 5. Diseño de Base de Datos Relacionales:
 
 3.4 **Diseño Físico**
 
