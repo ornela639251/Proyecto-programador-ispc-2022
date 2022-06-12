@@ -2,7 +2,7 @@
  proyecto de materia programador
 
 
-### Historia y evolución de los SGBD II
+### 2. Historia y evolución de los SGBD II
 Década de los 80 – SGBD Relacionales:
 En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
 Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
