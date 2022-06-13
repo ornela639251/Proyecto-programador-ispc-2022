@@ -16,7 +16,7 @@ Cuando hablamos de documentacion nos referimos:
 
   •	Sitios web para la descarga de las actualizaciones del producto
 
-Software (IEE): Es la parte de un sistema que se codifica para ejecutarse en una computadora .
+***Software (IEE)***: Es la parte de un sistema que se codifica para ejecutarse en una computadora .
 Características:
 
   •	Es tangible
@@ -42,17 +42,19 @@ Define el conjunto completo de actividades necesarias para transformar los reque
 Existen distintos tipos de modelos de desarrollo:
 
   •	Definidos o secuenciales
+  
   •	Empiricos
+  
   •	Modelo cascada: modelo lineal secuencial o ciclo de vida
   
-Hablaremos un poco mas sobre el modelo cascada o ciclo de vida:
+Hablaremos un poco mas sobre el ***modelo cascada*** o ciclo de vida:
 Es el conjunto de fases o procesos por las que pasa un software desde el inicio de su desarrollo hasta que se retira del servicio cuando finaliza su uso.
 Estas fases están estandarizadas, hay un marco de referencia con los procesos, actividades y tareas involucradas en el desarrollo, explotación y mantenimiento del producto.
-Se utilizan Curvas de fallos para la medición del funcionamiento del software desarrollado
+Se utilizan ***Curvas de fallos*** para la medición del funcionamiento del software desarrollado
 Agile
 A diferencia de las metodologías mencionadas anteriormente, Agile no es una de ellas, es mas bien una ideología con principios que guían el desarrollo de un producto.
 Trabaja en la adaptación y mejora continua, no hay productos finales, si no productos que evolucionan y mejoran.
-Manifiesto Agile (valores)
+***Manifiesto Agile*** (valores)
 
 
  •	Valorar a los individuos por encima de los procesos
@@ -64,7 +66,7 @@ Manifiesto Agile (valores)
  •	La respuesta al cambio por encima del seguimiento de un plan
 
 
-Principios Agile:
+***Principios Agile:***
 
  •	Colaboración estrecha con el cliente
  
