@@ -140,8 +140,8 @@ ubicación exacta de los datos.
 
 Empresas reconocidas de la época: 
 
--IBM y American Airlines crearon SABRE.
--CODASYL: Lenguaje de programación estándar que pudiera ser utilizado en multitud de ordenadores. (ejemplo:  COBOL)
+- IBM y American Airlines crearon SABRE.
+- CODASYL: Lenguaje de programación estándar que pudiera ser utilizado en multitud de ordenadores. (ejemplo:  COBOL)
 
 Década de los 70:
 
