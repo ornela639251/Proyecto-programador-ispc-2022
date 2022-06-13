@@ -300,6 +300,161 @@ Tratan de ser un híbrido entre el modelo relacional y el orientado a objetos. E
 Se agrupan las bases de datos pensadas para grabar los datos de manera veloz para así poder atender a miles de peticiones. La idea es que los datos apenas necesitan validarse y relacionarse y lo importante es la disponibilidad de la propia base de datos. El nombre NoSQL, hace referencia a que este modelo de bases de datos rompe con el lenguaje SQL (el lenguaje de las bases de datos relacionales, las bases de datos dominantes hasta la actualidad) para poder manipular los datos con lenguajes de otro tipo.  
 
 ### 5. Diseño de Base de Datos Relacionales:
+En las bases de datos se ha establecido el aspecto de un diseño. Es un ciclo de desarrollo que consta de tres etapas de diseño: el diseño conceptual, el diseño lógico y el diseño físico. 
+
+3.1. **Etapas de diseño**
+La metodología de diseño de bases de datos relacionales se ha consolidado a lo largo de los años satisfaciendo las propiedades de generalidad (independencia de la plataforma hardware/software), calidad del producto (precisión, completitud y eficacia) y facilidad de uso.
+ 
+Consta de las siguientes etapas:
+1. Diseño conceptual. Su objetivo es definir las entidades y las relaciones entre ellos de forma abstracta..
+2. Diseño lógico. Su objetivo es definir el esquema de la base de datos según el modelo que implementa el SGBD objetivo. 
+3. Diseño físico. Su objetivo es definir el esquema físico de la base de datos de forma que se den todas las instrucciones para que un DBA pueda implementar la base de datos sin ninguna ambigüedad. 
+3.2. **Diseño conceptual**
+En este apartado se estudia y se tiene como resultado el modelo entidad-relación que permite diseñar el esquema conceptual de una BD. A lo largo de este apartado se usará un ejemplo de aplicación correspondiente a las necesidades de una secretaría de un centro docente, en la que hay alumnos matriculados en asignaturas y profesores que las imparten en ciertas aulas. Los alumnos consiguen una nota determinada en cada asignatura en que están matriculados.
+ 
+3.2.1. **Concepto**
+Entidad: Es el menor objeto con significado en una instancia. Por ejemplo, para el diseño de una BD de la secretaría de un centro docente, el alumno con los siguientes datos se constituye una entidad.:
+                            DNI = 01234567Z,
+                            Nombre y apellidos = Manuel Vázquez Prieto,
+                            Teléfono = 91-12345678
+                            Domicilio = Calle del Jazmín 7, 4 Izq.
+ 
+En el caso del enfoque "clásico" correspondería a cada registro guardado en un fichero y serían los campos de los registros.
+ 
+• Atributo: Es cada uno de los componentes que determinan una entidad.
+Cada atributo tiene asociado un dominio: el conjunto de valores que puede tomar.
+ 
+• Atributos monovalorados y multivalorados: Los atributos multivalorados son los que pueden contener más de un valor simultáneamente, y monovalorados a los que sólo pueden contener un valor. 
+ 
+• Atributos simples y compuestos: Un atributo es compuesto cuando puede descomponerse en otros componentes o atributos más pequeños, y simple en otro caso.
+ 
+• Clave: Es un atributo o conjunto de atributos cuyos valores identifican unívocamente cada entidad.
+  El concepto de clave distingue tres claves diferentes:
+Superclave: Es cualquier conjunto de atributos que pueden identificar unívocamente a una tupla.
+Clave candidata: Es el menor conjunto de atributos que puede formar clave. Puede haber varias en una tabla.
+Clave Primaria: Es la clave candidata que distingue el usuario para identificar unívocamente cada tupla. Es importante en cuanto al aspecto del rendimiento, como se verá en el apartado dedicado al diseño físico.
+ 
+• Tipo de entidad. Es el conjunto de entidades que comparten los mismos atributos (aunque con diferentes valores para ellos).
+• Relación. Es una correspondencia entre dos o más entidades. Se habla de relaciones binarias cuando la correspondencia es entre dos entidades, ternarias cuando es entre tres, y así sucesivamente.
+• Tipos de relación. Representan a todas las posibles relaciones entre entidades del mismo tipo.
+ 
+ 3.2.2. **Diagramas entidad-relación (E-R)**
+El diseño del modelo E-R a partir del análisis inicial no es directo. A un mismo análisis le corresponden muchos diseños "candidatos". Hay varios criterios, pero ninguno es definitivo. 
+De un buen diseño depende:
+• Eficiencia: Es muy importante en las BD cuando se manejan grandes cantidades de datos.
+• Simplicidad del código: Se cometen menos errores.
+• Flexibilidad: Se refiere a que el diagrama sea fácil de modificar.
+Los componentes básicos de los diagramas E-R son los atributos, los tipos de entidades y los tipos de relaciones.
+ 
+3.2.3. **Elección de los tipos de entidad y sus atributos**
+De la especificación del problema de la secretaría se deduce que va ha haber un tipo de entidad alumnos, pero no cuáles son sus atributos. ¿Debe incluir las asignaturas en las que está matriculado? La respuesta es no y hacerlo así sería un grave error. Aparte de la idea 'filosófica’ (cada asignatura es un objeto con significado propio, es decir, una entidad), al mezclar en una sola entidad alumnos y asignaturas cometemos cuatro errores:
+ 
+    1. Un alumno no tiene una asignatura asociada sino un conjunto de asignaturas asociadas. En cambio, sí tiene un DNI asociado, una dirección asociada, etc. Por tanto las entidades serán de la forma
+                               {DNI=12345678V, Nomb.Ape=Luis Martínez, Telf.=01234567,
+                               Cod=MD, Título=Matemática Discreta, Créditos=9}
+                               {DNI=12345678V, Nomb.Ape=Luis Martínez, Telf.=01234567,
+                               Cod=IS, Título=Ingeniería del Software, Créditos=X}
+                               {DNI=12345678V, Nomb.Ape=Luis Martínez, Telf.=01234567,
+                               Cod=LPI, Título=Laboratorio de programación I, Créditos=X}
+Hay redundancia en la información de alumnos: se repite en cada entidad.
+ 
+     2. Las asignaturas son siempre las mismas, con lo que por cada alumno que se matricula en la misma asignatura hay que repetir toda la información:
+{ DNI=12345678V, Nomb.Ape=Luis Martínez, Telf.=01234567,....Asignaturas={ {Cod=MD, Título=…}, {COD=IS,Título=…},
+                              {Cod=LPI,Título=…} } }
+                              { DNI=0000001, Nomb.Ape=Eva Manzano, Telf.=01234567, … ,
+                              Asignaturas={ {Cod=MD, Título=…}, {COD=IS,Título=…},
+                              {Cod=BDSI,Título=…} } }
+En este caso hay redundancia en la información de las asignaturas.
+ 
+     3. Por cada profesor hay que apuntar las asignaturas que imparte. La información de las asignaturas debe estar por tanto relacionada con la de los profesores, pero ya está incluida con los alumnos. Hay que repetir la información de las asignaturas por lo que se consigue más redundancia.
+ 
+     4. No se pueden guardar los datos de una asignatura hasta que no se matricule un alumno en ella. Puede ser que en secretaría quieran meter los datos de las asignaturas antes de empezar el proceso de matrícula: No pueden. Una solución sería incluirlos con los datos de los alumnos vacíos (nulos), lo cual no sería nada aconsejable. Los valores nulos se deben evitar siempre que sea posible.
+ 
+Por tanto, hay que distinguir entre el tipo de entidad Alumnos y el tipo de entidad Asignaturas. Ambas se relacionarán mediante un tipo de relación Matrícula. Los restantes tipos de entidad serán: Profesores y Aulas.
+ 
+                            Los atributos de cada tipo de entidad:
+                               • Alumnos: DNI, Apellidos y Nombre, Domicilio, Teléfono y COU
+                               • Asignaturas: Código, Título, Créditos
+                               • Profesores: DNI, Apellidos y nombre, Domicilio y Teléfono
+                               • Aulas: Edificio y Número
+Aún nos falta un atributo, que es la nota: ¿Dónde se coloca? En Alumnos no porque un alumno tiene muchas notas, tantas como asignaturas en las que esté matriculado. En Asignaturas no porque en la misma asignatura están matriculados muchos alumnos. Va a ser un atributo del tipo de relación matrícula.
+ 
+3.2.4. **Elección de los tipos de relación**
+El primer tipo de relación es la Matrícula que relaciona cada alumno con las asignaturas en las que está matriculado. Además, está relación tiene un atributo, nota, que se asocia cada tupla de la relación.
+El segundo tipo de relación es Supervisa que va de Profesores a Profesores y que incluye los papeles Supervisor y Supervisado. 
+La última es Imparte, que relaciona cada profesor con la asignatura que imparte y el aula en la que da esa asignatura. Aquí también surgen varias posibilidades:
+            a) Hacer dos relaciones binarias
+            b) Hacer una relación ternaria entre profesores, aulas y asignaturas.
+            c) Hacer tres relaciones binarias: Profesores-Asignaturas, Profesores-Aulas, Asignaturas-Aulas.
+ 
+ 3.2.5. **Adelanto de las restricciones de integridad**
+El modelo E-R puede definir numerosas restricciones de integridad sobre los tipos de entidades y tipos de relaciones. Por ejemplo, en la relación Supervisa un profesor puede tener a lo sumo un supervisor
+
+Las restricciones son parte del diseño de la base de datos igual que los tipos de entidades o de relaciones. Los SGBD se encargan de comprobar que la instancia verifica las restricciones más usuales
+  
+Un tipo de restricción de integridad que interesa conocer en esta etapa es la restricción de clave. Una restricción clave consiste en imponer que un conjunto de atributos sea el que define unívocamente a una fila de un tipo de entidades. 3.3. Diseño lógico
+El diseño lógico es la segunda etapa del diseño de bases de datos en general y de las bases de datos relacionales en particular. En nuestro caso, las BD relacionales, el resultado de esta etapa es un esquema relacional basado en un modelo relacional. 
+ 
+3.3.1. **El modelo relacional**
+Este modelo fue creado por Codd a principios de los 70 al que dotó de una sólida base teórica en base a la relación o tabla. Es importante no confundir la tabla con las relaciones del modelo E-R. En este modelo no se distingue entre tipos de entidades y tipos de relaciones porque la idea es que una relación o tabla expresa la relación entre los tipos de valores que contiene.
+ 
+A continuación se introducen los conceptos de este modelo:
+• Entidad. Igual que en el modelo E-R. También se les llama tuplas o filas de la relación.
+• Atributo. Igual que en el modelo E-R. También se le llaman campos o columnas de la relación. El dominio de los atributos tiene que ser simple: no se admiten atributos multivalorados ni compuestos.
+• Esquema de una relación. Viene dado por el nombre de la relación y una lista de atributos. Es el tipo de entidad.
+• Conjunto de entidades. Relación o tabla.
+ • Clave. Igual que en el modelo E-R. Hay que darse cuenta que en el modelo relacional todas las tablas deben tener claves, y que algunas tablas van a representar relaciones del esquema E-R.
+• Instancia de una relación. Son conjuntos de entidades. Cada entidad se representa como una tupla. Cada componente de la tupla corresponde con el valor del atributo correspondiente, según el orden enunciado en el esquema de la relación.
+ 
+3.3.2. **Paso de un esquema E-R a un esquema relacional**
+La forma de traducir cada uno de los elementos que aparecen en el modelo E-R a un esquema relacional.
+ 
+Tipos de entidades
+Para cada tipo de entidad se crea una relación con el mismo nombre y conjunto de atributos. 
+
+Tipos de relaciones
+Para cada tipo de relación R se crea una relación que tiene como atributos:
+Los atributos de la clave primaria de cada tipo de entidad que participa en la relación. En ocasiones hay que renombrar atributos para evitar tener varios con el mismo nombre. 
+ 
+Claves
+Hay dos casos:
+1. La relación proviene de un tipo de entidad en el esquema E-R. La clave es la misma que la del tipo de entidad. 
+ 
+2. La relación proviene de un tipo de relación en el esquema E-R. Si la relación R es un tipo de relación entre varios tipos de entidades se va a construir una relación bajo el modelo E-R a partir de R con los atributos que forman clave primaria en todas las entidades participantes más los propios de R. De ellos formarán clave primaria las claves primarias de cada una de las entidades participantes.
+
+Restricciones de cardinalidad
+Se incorpora este tipo de restricciones de integridad cuando se desean indicar relaciones una a una, una a varias y varias a varias. A continuación se muestran estos casos para relaciones binarias, siendo c1 y c2 las claves primarias de E1 y E2, respectivamente:
+                a) Una a una
+podemos escoger como clave o bien c1 o bien c2, de ellas la más 
+Por ejemplo, supongamos que:
+Hombres(DNI)={1,2}, Mujer(DNI)={3,4}, la relación Casado(DNIH, DNIM) sólo puede contener {(1,3), (2,4)} o {(1,4), (2,3)} o, en representación tabular:
+ 
+ 
+Dado que no se repite ningún valor de las columnas de las dos posibilidades de R, tanto A como B podrían ser clave. Así, tendríamos las alternativas siguientes para la relación Casados: Casados(DNIH, DNIM) y Casados(DNIH, DNIM).
+ 
+ b) Una a varias
+En este caso, la clave de R debe ser la clave primaria de c2. Es decir, en la relación R no puede aparecer repetido ningún valor de E2.
+ 
+c) Varias a varias
+Éste es el caso más general en el que no se puede imponer ninguna restricción además de la ya indicada de clave.
+ 
+3.3.3. **Restricciones de integridad**
+Hay dos: restricciones de integridad referencial y restricciones de participación total.
+Las claves y las restricciones de integridad referencial son características que se expresan directamente en la práctica totalidad de los SGBD relacionales. Estos sistemas se ocupan automáticamente de que no se violen estas restricciones. Sin embargo, no ocurre lo mismo con las de participación total y otras restricciones, como se verá en el tema dedicado a las restricciones de integridad.
+ 
+Restricciones de integridad referencial
+Al traducir un tipo de relación R, en cualquier instancia de R se debe cumplir que los valores de los atributos que hereda de una entidad (de su clave primaria) deben aparecer previamente en el conjunto de entidades. 
+ 
+Restricciones de participación total
+Cuando cada valor de un tipo de entidad debe aparecer en un tipo de relación, como Alumnos en Matrícula, significa que, además de la restricción de integridad referencial comentada en el apartado anterior, se debe cumplir que todo valor de DNI en Alumnos debe aparecer en el atributo DNI de Matrícula. 
+ 
+3.3.4. **Cuestiones de diseño**
+
+Generalmente se combinan por motivos de rendimiento. Un inconveniente de esta combinación es que, dado que no se exige participación total de Personas en Nacida, no tendremos información del país de nacimiento de algunas personas, y en la tabla Personas va a aparecer un valor NULL (nulo) en el atributo PaísNac, que indica que no se dispone de esa información. 
+Es un valor especial que se debe tratar con 
+  • Ausencia de información.
+  • Este atributo no se aplica o no tiene sentido para esta entidad en concreto.
+  • Valor desconocido.
 
 3.4 **Diseño Físico**
 
