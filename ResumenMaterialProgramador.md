@@ -55,29 +55,49 @@ Manifiesto Agile (valores)
 
 
  •	Valorar a los individuos por encima de los procesos
+ 
  •	El software funciona por encima de la documentación exhaustiva
+ 
  •	La colaboración del cliente por encima de la negociación contractual
+ 
  •	La respuesta al cambio por encima del seguimiento de un plan
 
 
 Principios Agile:
  •	Colaboración estrecha con el cliente
+ 
  •	Predisposición y respuesta al cambio
+ 
  •	Desarrollo incremental con entregas frecuentes de funcionalidad
+ 
  •	Comunicación verbal directa
+ 
  •	Simplicidad, solo los artefactos necesarios
+ 
  •	Motivación, compromiso y responsabilidad del equipo por la auto-gestión auto-organización.
+ 
  •	Satisfacer al cliente mediante la entrega temprana y continua del software con valor
+ 
  •	Aceptamos que los requisitos cambien, incluso en etapas tardías del desarrollo
+ 
  •	Entregamos software funcional frecuentemente, entre dos semanas y dos meses, con preferencia el periodo de tiempo mas corto posible. 
+ 
  •	Los responsables de negocio y desarrolladores trabajamos juntos de forma cotidiana durante todo el proyecto.
+ 
  •	Los proyectos se desarrollan en torno a individuos motivados
+ 
  •	El método mas eficiente y efectivo de comunicar información al equipo de desarrollo y entre sus miembros es la conversación cara a cara.
+ 
  •	El software funcionando es la medida principal de progreso
+ 
  •	Los procesos Agiles promueven el desarrollo sostenible. Los promotores, desarrolladores y usuarios debemos ser capaces de mantener un ritmo constante de forma indefinida
+ 
  •	La atención continua a la excelencia técnica y a buen diseño mejora la agilidad.
+ 
  •	La simplicidad o el arte de maximizar la cantidad de trabajo no realizado, es esencial.
+ 
  •	Las mejores arquitecturas, requisitos y diseños emergen de equipos auto-organizados.
+ 
  •	A intervalos regulares el equipo reflexiona sobre como ser mas efectivo para a continuación ajustar y perfeccionar su comportamiento en consecuencia.
 
 
