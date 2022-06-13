@@ -105,7 +105,7 @@ Trabaja en la adaptación y mejora continua, no hay productos finales, si no pro
  •	A intervalos regulares el equipo reflexiona sobre como ser mas efectivo para a continuación ajustar y perfeccionar su comportamiento en consecuencia.
 
 
-### Historia y evolución de los SGBD II
+### 2.Historia y evolución de los SGBD II###  
 Década de los 80 – SGBD Relacionales:
 En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
 Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
@@ -559,201 +559,172 @@ Es un valor especial que se debe tratar con
   • Este atributo no se aplica o no tiene sentido para esta entidad en concreto.
   • Valor desconocido.
 
-3.4 **Diseño Físico**
+ <-------------------------------------**Parte 2 de 5.Diseño de bases de datos relacionales**----------------------------------------->
 
-El objetivo del diseño fisico es implementar el diseño de una base de datos en un SGBD.
+**3.4 Diseño Físico**
 
+El objetivo del diseño fisico es implementar el diseño de una base de datos en un SGBD.  
 Se establecen índices que son estructura de datos que facilitan el acceso o la consulta de datos. Y se organizan en base a campos relacionados.
 
 Los indices poseen dos campos:
 
-- valor de la clave 
+- Valor de la clave 
 - Dirección Fisica del registro
 
-El lado negativo es que el índice debe actualizarse cuando una tabla sufra una modificación.
-
+El lado negativo es que el índice debe actualizarse cuando una tabla sufra una modificación.  
 Por último, pueden llevar valores nulos o no y pueden indicar elementos que no so repetidos.
 
-3.5 **Restricciones de Integridad.**
+**3.5 Restricciones de Integridad.**
 
-Este tipo de restricciones ayudan a cuidar la consistencia semántica de los datos.
-
+Este tipo de restricciones ayudan a cuidar la consistencia semántica de los datos.  
 Los tipos de restricciones de integridad en una base de datos se pueden resumir en:
 
--Claves
--Cardinalidad de la relación
--Restrcciones de los dominios
--Integridad referencial
--Participación total
--Dependencia funcionales
--Otras restricciones
+- Claves
+- Cardinalidad de la relación
+- Restrcciones de los dominios
+- Integridad referencial
+- Participación total
+- Dependencia funcionales
+- Otras restricciones
 
 Para esto se utilizan los siguientes mecanismos:
 
--Declaracion de claves
--Declaracion de integridad referencial
--Declaracion de tipo de cardinalidad
--Disparadores (Triggers)
+- Declaracion de claves
+- Declaracion de integridad referencial
+- Declaracion de tipo de cardinalidad
+- Disparadores (Triggers)
 
-3.5.1 **Restricciones de los dominios.**
+**3.5.1 Restricciones de los dominios.**
 
-En esta restriccione se establece un dominio de valores posibles.
+En estas restricciones se establece un dominio de valores posibles.  
+No sólo permite verificar los valores introducidos sino que aseguramos que la consulta tenga sentido por medio de comparaciones.
 
-No solo permite verificar los valores introducidos sino que aseguramos que la consulta tenga sentido por medio de comparaciones.
+- Restricciones de existencia: se utiliza para evitar la aparicion de valores nules. Y para la definicion de la tabla se utilizaría NOT NULL.  
+- Restrcciones de unicidad: evita la aparicion de valores duplicados en las columnas.
 
-* Restricciones de existencia
+**3.5.2 Restriccines de integridad referencial**
 
-Esta se utiliza para evitar la aparicion de valores nules. Y para la definicion de la tabla se utilizaría NOT NULL.
-
-- Restrcciones de unicidad
-
-Esta restriccion evita la aparicion de valores duplicados en las columnas.
-
-3.5.2 **Restriccines de integridad referencial**
-
-   La integridad referencial permite asegurar que un valor que aparece en una relación para un conjunto de atributos determinado aparezca también en otra relación para ese mismo conjunto de atributos.
+La integridad referencial permite asegurar que un valor que aparece en una relación para un conjunto de atributos determinado aparezca también en otra relación para ese mismo conjunto de atributos.
 
 Este tipo de restricciones se denota simplificadamente:
 
-Relación1.(Atributo1-1,...,Atributo1-N) ⊆
+Relación1.(Atributo1-1,...,Atributo1-N) ⊆  
 Relación2.(Atributo2-1,...,Atributo2-N)
 
 De forma que si quedan tuplas colgantes la actualización se rechace como error o se aplica en cascada similar al borrado.
 
-3.5.3 **Dependencias Funcionales**
+**3.5.3 Dependencias Funcionales**
 
-Es una propiedad semantica que determina el diseñador, y determina un conjunto de atributos a partir de otr conjunto de atributos.
-
-Esto evita la redundancia de valores no deseables. La dependencis funcionales se denotan de la siguiente forma:
-
+Es una propiedad semantica que determina el diseñador, y determina un conjunto de atributos a partir de otr conjunto de atributos.  
+Esto evita la redundancia de valores no deseables. La dependencis funcionales se denotan de la siguiente forma:  
 Conunto de atributos que determinan ---> Conjunto de atributos determinados.
 
-3.5.4 **Disparadores**
+**3.5.4 Disparadores**
 
-Los disparadores son mecanismos útiles para implementar restricciones de integridad, alertar a los usuarios o para realizar de manera automática ciertas tareas cuando se 
-cumplen determinadas condiciones.
+Los disparadores son mecanismos útiles para implementar restricciones de integridad, alertar a los usuarios o para realizar de manera automática ciertas tareas cuando se cumplen determinadas condiciones.
 
-Un ejemplo sería indicar cuándo se ha alcanzado un stock minimo de un producto el cual se debera reponer.
+Un ejemplo sería indicar cuándo se ha alcanzado un stock mínimo de un producto el cual se debera reponer.
 
+**3.6 Normalización**
 
-3.6 **Normalización**
-
-Es un proceso de análisis y diseño que se utiliza para evitar redundancia de datos  y las anomalías que estan producen.
-
+Es un proceso de análisis y diseño que se utiliza para evitar redundancia de datos  y las anomalías que estan producen.  
 Un esquema de relación puede estar en distintas formas normales dependiendo del grado de descomposición que se haya realidado.
 
-3.6.1 **Redundancia de datos**
+**3.6.1 Redundancia de datos**
 
 El objetivo del diseño de la base de datos es agrupar atributos en relaciones de forma que reduzca la redundancia de datos y así el espacio de almacenamiento requeridoa.
 
-3.6.2 **Anomalías de actualizacíón**
+**3.6.2 Anomalías de actualizacíón**
 
 Pueden ser de tres tipos
 
-* Anomalias de inserción: Se produce cuando se incerta una nueva fila sin respetar las dependencias funcionales. O cuando cuando se imposibilita
-añadir nuevos datos para una dependencia funcional sin que existan antecedentes
-para ella.
+- Anomalias de inserción: Se produce cuando se incerta una nueva fila sin respetar las dependencias funcionales. O cuando cuando se imposibilita añadir nuevos datos para una dependencia funcional sin que existan antecedentes para ella. 
+- Anomalías de modificación: Se produce cuando se modifican columnas con datos redundantes en un sólo subconjunto de filas con el mismo dato.  
+- Anomalías de eliminación: Se produce cuando se eliminan todas las filas en las que aparecen los datos redundante. Por lo que se pierde los datos de la dependencia funcional.
 
-* Anomalías de modificación: Se produce cuando se modifican columnas con datos redundantes en un sólo subconjunto de filas con el mismo dato.
-
-*Anomalías de eliminación: Se produce cuando se eliminan todas las filas en las que aparecen los datos redundante. Por lo que se pierde los datos de la dependencia funcional.
-
-3.6.3 **Formas normales y normalización**
+**3.6.3 Formas normales y normalización**
 
 Se refiere a la mejor forma normal de diseñar un esquema relacional indicando así el grado hasta el que se ha normalizado. Se deben cumplir dos propiedades.
 
-* La propiedad de preservación de dependencias.
+- La propiedad de preservación de dependencias.
+- La propiedad de la posibilidad de reproducir la información de la tabla original.
 
-* La propiedad de la posibilidad de reproducir la información de la tabla original.
+Las formas normales más habituales son:
 
-las formas normales más habituales son:
-
--Primera (1FN)
--Segunda (2FN)
--Tercera (3FN)
+- Primera (1FN)
+- Segunda (2FN)
+- Tercera (3FN)  
 Boyce/Codd (FNBC)
 
-3.6.4 **Primera forma normal**
+**3.6.4 Primera forma normal**
 
-Se estabece que los dominios de los atributos sólo pueden ser atómicos, para evitar atributos multivalorados, compuestos y sus combinaciones.
-
+Se estabece que los dominios de los atributos sólo pueden ser atómicos, para evitar atributos multivalorados, compuestos y sus combinaciones. 
 Para esto es factible eliminar atributos, crear nuevas relaciones, ampliar la clave de la relación.
 
-3.6.5 **Segunda forma normal**
+**3.6.5 Segunda forma normal**
 
-Se dice que una relación esta en segunda forma normal si cada atributo que no forma parte de la clave primaria depende funcional y completamente de cada clave.
-
+Se dice que una relación esta en segunda forma normal si cada atributo que no forma parte de la clave primaria depende funcional y completamente de cada clave.  
 El procedimiento de normalización es crear tantas nuevas relacines como  dependencias funcionales no sean completas.
 
-3.6.6 **Tercera forma normal**
+**3.6.6 Tercera forma normal**
 
-Se basa en el concepto de dependencia funcinal transitiva. Un esquema en tercera forma normal si satisface la segunda forma normal y ninuno de los atributos que no froman parte de una clave candidata depende transitivamente
-de la clave primaria.
-
+Se basa en el concepto de dependencia funcinal transitiva. Un esquema en tercera forma normal si satisface la segunda forma normal y ninuno de los atributos que no froman parte de una clave candidata depende transitivamente de la clave primaria.  
 El procedimiento para normalizar esta relación consiste en descomponerla en los atributos definidos por la dependencia funcional.
 
-3.6.7 **Forma normal de Bpyce-Codd**
+**3.6.7 Forma normal de Bpyce-Codd**
 
 Esta forma se propuso como una forma más simple que la tercera forma normal, pero en realidad es más estricta porque cada relación en FNBC está en 3FN. Sin embargo
 esto último no se cumple a la inversa.
 
-3.6.8 **Desnormalización para el rendimiento**
+**3.6.8 Desnormalización para el rendimiento**
 
 El proceso de tomar un esquema normalizado y hacerlo no normalizado se denomina desnormalización, y los diseñadores lo utilizan para ajustar el rendimiento de los 
 sistemas para dar soporte a las operaciones críticas en el tiempo.
 
-3.7 **Normativa de denominación**
+**3.7 Normativa de denominación**
 
 Es una colección de reglas que permite asignar nombres a identificadores y objetos. El objetivo es que los nombres que se elijan identifiquen de forma lo más clara 
 posible el significado del elemento al que se refiere el nombre.
 
-3.7.1 **Identificadores**
+**3.7.1 Identificadores**
 
 Se construyen de números y letras. Y se utilizan las siguientres relgas:
 
-* Separar cada palabra por un caracter de subrayado. Ejemplo, Nombre_del_paciente.
+- Separar cada palabra por un caracter de subrayado. Ejemplo, Nombre_del_paciente.
+- Separar cada palabra ponendo la primera letra de cada una en mayúscula. Ejemplo, NombreDelPaciente.
 
-*Separar cada palabra ponendo la primera letra de cada una en mayúscula. Ejemplo, NombreDelPaciente.
-
-3.7.2 **Tablas**
+**3.7.2 Tablas**
 
 Las tablas representan entidades y sus nombres deberían describir las entidades que representan.
 
 Las reglas son:
 
-* Seleccionar nombres de tablas basados en los nombres posibles para las entidades involucradas.
+- Seleccionar nombres de tablas basados en los nombres posibles para las entidades involucradas.
+- Usar sustantivos.
+- Asegurarse de que tengan un sentido intuitivo.
+- Algunas tablas no representan entidades sino su relación, pero puede utilizarse el nombre de las dos tablas asociadas para describirla.
 
-* Usar sustantivos.
-
-* Asegurarse de que tengan un sentido intuitivo.
-
-* Algunas tablas no representan entidades sino su relación, pero puede utilizarse el nombre de las dos tablas asociadas para describirla.
-
-3.7.3 **Restricciones**
+**3.7.3 Restricciones**
 
  Las restricciones se pueden denominar de forma autoinperativas. Hay que utilizar una abreviatura de dos letras para identificar la naturaleza de la restricción.
 
-* CP para clave principal.
+- CP para clave principal.
+- IR para integridad referencial.
+- CO para la de comprobación.
+- UN para la de unicidad.
 
-* IR para integridad referencial.
-
-* CO para la de comprobación.
-
-* UN para la de unicidad.
-
-Cuando están involucradas dos tablas hay que hacer que el segundo elemento del nombre sea la tabla con la clave externa y que el tercer elemento sea la tabla donde reside 
-la clave principal.
+Cuando están involucradas dos tablas hay que hacer que el segundo elemento del nombre sea la tabla con la clave externa y que el tercer elemento sea la tabla donde reside la clave principal.
 
 Ejemplo, CO_Médicos_FormatoCódigo.
 
-3.7.4 **Controles**
+**3.7.4 Controles**
 
 Cada tipo de control se debería denominar con una indicación del tipo control, anteponiendo a un nombre descriptor un prefijo que indique el tipo.
 
-3.7.5 **Variables.**
+**3.7.5 Variables.**
 
 Cada variable se debería denominar con una indicación del tipo variable, anteponiendo a un nombre descriptor un prefijo que indique el tipo.
 
-3.7.6 **Objetos de la base de datos**
+**3.7.6 Objetos de la base de datos**
 
 Cada objeto se debería denominar con una indicación del tipo de objeto, anteponiendo a un nombre descriptor un prefijo que indique el tipo.
