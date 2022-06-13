@@ -103,6 +103,62 @@ Trabaja en la adaptación y mejora continua, no hay productos finales, si no pro
  •	Las mejores arquitecturas, requisitos y diseños emergen de equipos auto-organizados.
  
  •	A intervalos regulares el equipo reflexiona sobre como ser mas efectivo para a continuación ajustar y perfeccionar su comportamiento en consecuencia.
+ 
+ 
+                                ------------- ### Historia y Evolución de los SGBD----------------------
+Las bases de datos se desarrollaron a partir de la necesidad de almacenar grandes cantidades de información o datos.
+Se remontan a la Antigüedad donde ya existían bibliotecas y toda clase de registros, se utilizaban para recoger, por ejemplo,
+información sobre las cosechas y censos. Aunque su búsqueda era LENTA y POCO EFICAZ, ya que se realizaba todo de forma MANUAL.
+
+En el año 1880 EEUU tenía un problema con el censo de la población; le llevó siete años poder elaborarlo. Según los cálculos,
+para el año 1890, le llevaría unos 10 años. Para solventar este problema, la Oficina de Censo organizó un concurso para ver 
+qué soluciones proponía la gente. El ganador fue el estadístico Herman Hollerith. 
+
+En 1884 comenzó a trabajar en el diseño de una maquina tabuladora o censadora, basada en tarjetas perforadas. 
+El uso de esta máquina redujo el tiempo de elaboración del censo a tres años. Lo nombraron el primer ingeniero estadístico de la historia.
+
+Posteriormente, en la década de los cincuenta se da origen a las Cintas Magnéticas. Para automatizar la información y hacer respaldos.
+Con la desventaja de que solo se podía hacer de forma secuencial.
+
+Las aplicaciones informáticas de los años sesenta acostumbraban a darse totalmente por lotes (batch), y estaban pensadas para una tarea muy específica.
+A medida que se fueron introduciendo las líneas de comunicación, los terminales y los discos, se fueron escribiendo programas que permitían a varios 
+usuarios consultar los mismos ficheros on-line y de forma simultánea (ficheros interrelacionados), se llamaron Data Banks.
+
+Luego salió un software mas sofisticado llamado: Data Base Management Systems o como lo llamamos nosotros: Sistemas de Gestión de BD (SGBD).
+
+Definiciones:
+BASE DE DATOS: un sistema formado por un conjunto de datos almacenados en discos que permiten el acceso directo a ellos y un conjunto de 
+programas que manipulen ese conjunto de datos.
+
+SISTEMA DE GESTION DE BASE DE DATOS: un tipo de software muy específico dedicado a servir de interfaz entre la base de datos, el usuario y las
+aplicaciones que la utilizan. Sirven para definir, construir y manipular una base de datos, permitiendo así almacenar y posteriormente acceder 
+a los datos de forma rápida y estructurada.
+
+Posteriormente en la década de los sesenta, las computadoras bajaron sus precios para que las compañías puedan adquirirlas.
+Se volvió muy popular el uso de los discos, ya que permitía consultar la información directamente, sin tener que saber la 
+ubicación exacta de los datos.
+
+Empresas reconocidas de la época: 
+
+-IBM y American Airlines crearon SABRE.
+-CODASYL: Lenguaje de programación estándar que pudiera ser utilizado en multitud de ordenadores. (ejemplo:  COBOL)
+
+Década de los 70:
+
+Los SGBD de esa época, estaban orientados a facilitar la utilización de grandes conjuntos de datos en los que las interrelaciones eran complejas.
+
+- Aparecen los terminales de teclado (Mainframes), se empiezan a construir grandes aplicaciones on-line transaccionales (OLTP).
+
+- Edgar Frank Codd, fue muy reconocido por sus aportes en esta época.
+
+- Durante la década de 1970, Lawrence J. Ellison, desarrolló el Relational Software System, o lo que es lo mismo, lo que actualmente
+ se conoce como Oracle Corporation. 
+
+- Posteriormente en la época de los ochenta también se desarrollará el SQL (Structured Query Language)
+                                                                
+Estos sistemas son una ayuda esencial en el ámbito de los negocios, diseño e implementación de estrategias para la relación cliente/servidor.
+                                           
+
 
 
 ### 2.Historia y evolución de los SGBD II   
