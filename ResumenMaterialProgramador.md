@@ -257,6 +257,7 @@ datos.
 - Ocasionales. Son usuarios que utilizan un acceso mínimo a la base de datos a través de una
 aplicación que permite consultar ciertos datos.
 
+ <-------------------------------------**Parte 2 de 4.Sistemas Gestores de Bases de Datos**----------------------------------------->
 
 *El Administrador de la Base de Datos DBA*  
 
