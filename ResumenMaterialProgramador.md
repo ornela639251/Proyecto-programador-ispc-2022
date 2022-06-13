@@ -40,6 +40,7 @@ Es un proceso que automatiza herramientas adaptándose a un proyecto, el cual re
 Procesos para el desarrollo de software
 Define el conjunto completo de actividades necesarias para transformar los requerimientos del usuario en producto.
 Existen distintos tipos de modelos de desarrollo:
+
   •	Definidos o secuenciales
   •	Empiricos
   •	Modelo cascada: modelo lineal secuencial o ciclo de vida
@@ -64,6 +65,7 @@ Manifiesto Agile (valores)
 
 
 Principios Agile:
+
  •	Colaboración estrecha con el cliente
  
  •	Predisposición y respuesta al cambio
