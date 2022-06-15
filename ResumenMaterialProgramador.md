@@ -106,6 +106,7 @@ Trabaja en la adaptación y mejora continua, no hay productos finales, si no pro
  
  
                                 ------------- ### Historia y Evolución de los SGBD----------------------
+                                
 Las bases de datos se desarrollaron a partir de la necesidad de almacenar grandes cantidades de información o datos.
 Se remontan a la Antigüedad donde ya existían bibliotecas y toda clase de registros, se utilizaban para recoger, por ejemplo,
 información sobre las cosechas y censos. Aunque su búsqueda era LENTA y POCO EFICAZ, ya que se realizaba todo de forma MANUAL.
@@ -126,11 +127,11 @@ usuarios consultar los mismos ficheros on-line y de forma simultánea (ficheros 
 
 Luego salió un software mas sofisticado llamado: Data Base Management Systems o como lo llamamos nosotros: Sistemas de Gestión de BD (SGBD).
 
-Definiciones:
-BASE DE DATOS: un sistema formado por un conjunto de datos almacenados en discos que permiten el acceso directo a ellos y un conjunto de 
+### Definiciones:
+### BASE DE DATOS: un sistema formado por un conjunto de datos almacenados en discos que permiten el acceso directo a ellos y un conjunto de 
 programas que manipulen ese conjunto de datos.
 
-SISTEMA DE GESTION DE BASE DE DATOS: un tipo de software muy específico dedicado a servir de interfaz entre la base de datos, el usuario y las
+### SISTEMA DE GESTION DE BASE DE DATOS: un tipo de software muy específico dedicado a servir de interfaz entre la base de datos, el usuario y las
 aplicaciones que la utilizan. Sirven para definir, construir y manipular una base de datos, permitiendo así almacenar y posteriormente acceder 
 a los datos de forma rápida y estructurada.
 
@@ -138,12 +139,12 @@ Posteriormente en la década de los sesenta, las computadoras bajaron sus precio
 Se volvió muy popular el uso de los discos, ya que permitía consultar la información directamente, sin tener que saber la 
 ubicación exacta de los datos.
 
-Empresas reconocidas de la época: 
+### Empresas reconocidas de la época: 
 
 - IBM y American Airlines crearon SABRE.
 - CODASYL: Lenguaje de programación estándar que pudiera ser utilizado en multitud de ordenadores. (ejemplo:  COBOL)
 
-Década de los 70:
+### Década de los 70:
 
 Los SGBD de esa época, estaban orientados a facilitar la utilización de grandes conjuntos de datos en los que las interrelaciones eran complejas.
 
@@ -157,6 +158,7 @@ Los SGBD de esa época, estaban orientados a facilitar la utilización de grande
 - Posteriormente en la época de los ochenta también se desarrollará el SQL (Structured Query Language)
                                                                 
 Estos sistemas son una ayuda esencial en el ámbito de los negocios, diseño e implementación de estrategias para la relación cliente/servidor.
+
                                            
 
 
@@ -170,11 +172,26 @@ SQL comenzó a ser el modelo estándar de las industrias con su base de datos ba
 El dominio de Oracle en el mercado fue casi total hasta la aparición de SQL Server de Microsoft. Posteriormente durante los '90 fueron apareciendo nuevos sistemas de SGBD Relacionales como PostgreSQL, My SQL y Firebird gestando así las BD orientadas a objetos.
 
 Década de los 90: Distribución, C/S y 4GL:
-A finales de los '80 y principios de los '90 el sector empresarial se encontró con que debido a la gran cantidad de BD y SGBD surge la necesidad de tener una visión global que Permitir interrelacionar las diferentes aplicaciones y las distintas BD
+A finales de los '80 y principios de los '90 el sector empresarial se encontró con que debido a la gran cantidad de BD y SGBD surge la necesidad de tener una visión global que Permitir interrelacionar las diferentes aplicaciones y las distintas BD. A esto se lo conoce como base de datos Distribuida. 
+Esta distribución se consigue cuando las diferentes BD son soportadas por una misma marca de SGBD, cuando hay homogeneidad.
+Esto no es tan sencillo si los SGBD son heterogéneos. En la actualidad, gracias a la estandarización del lenguaje SQL, los SGBD de marcas diferentes pueden darse servicio unos a otros y colaborar para dar servicio a un programa de aplicación. No obstante, en general, en los casos de heterogeneidad no se llega a poder dar en el programa que los utiliza la apariencia de que se trata de una única BD.
+Además de esta distribución “impuesta”, al querer tratar de forma integrada distintas BD preexistentes, también se puede hacer una distribución “deseada”, diseñando una BD distribuida físicamente, y con ciertas partes replicadas en diferentes sistemas.
 
-### Pude MODIFICAR TXT
+Las razones básicas por las que interesa esta distribución son las siguientes:
 
-Continuará…
+  ***    Disponibilidad                                                                                                                   
+                           La disponibilidad de un sistema con una BD distribuida puede ser más alta, porque si queda fuera de servicio uno de los sistemas, los demás seguirán funcionando. Si los datos residentes en el sistema no disponible están replicados en otro sistema, continuarán estando disponibles. En caso contrario sólo estarán disponibles los datos de los demás sistemas.
+
+  ***  Coste                                                                                                                                    
+                           Una BD distribuida puede reducir el coste. En el caso de un sistema centralizado, todos los equipos usuarios, que pueden estar distribuidos por distintas y lejanas áreas geográficas, están conectados al sistema central por medio de líneas de comunicación. El coste total de las comunicaciones se puede reducir haciendo que un usuario tenga más cerca los datos que utiliza con mayor frecuencia; por ejemplo, en un ordenador de su propia oficina o, incluso, en su ordenador personal.
+
+
+### Aún Incompleto...
+
+
+
+
+
 
 
 ### 3. Introducción a las BD: 
