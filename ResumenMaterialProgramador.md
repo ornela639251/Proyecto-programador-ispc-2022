@@ -128,10 +128,10 @@ usuarios consultar los mismos ficheros on-line y de forma simultánea (ficheros 
 Luego salió un software mas sofisticado llamado: Data Base Management Systems o como lo llamamos nosotros: Sistemas de Gestión de BD (SGBD).
 
 ### Definiciones:
-### BASE DE DATOS: un sistema formado por un conjunto de datos almacenados en discos que permiten el acceso directo a ellos y un conjunto de 
+*BASE DE DATOS:* un sistema formado por un conjunto de datos almacenados en discos que permiten el acceso directo a ellos y un conjunto de 
 programas que manipulen ese conjunto de datos.
 
-### SISTEMA DE GESTION DE BASE DE DATOS: un tipo de software muy específico dedicado a servir de interfaz entre la base de datos, el usuario y las
+*SISTEMA DE GESTION DE BASE DE DATOS:* un tipo de software muy específico dedicado a servir de interfaz entre la base de datos, el usuario y las
 aplicaciones que la utilizan. Sirven para definir, construir y manipular una base de datos, permitiendo así almacenar y posteriormente acceder 
 a los datos de forma rápida y estructurada.
 
