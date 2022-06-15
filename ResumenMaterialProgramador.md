@@ -159,11 +159,14 @@ Los SGBD de esa época, estaban orientados a facilitar la utilización de grande
                                                                 
 Estos sistemas son una ayuda esencial en el ámbito de los negocios, diseño e implementación de estrategias para la relación cliente/servidor.
 
+
+
                                            
 
 
 
 ### 2.Historia y evolución de los SGBD II   
+
 Década de los 80 – SGBD Relacionales:
 En los '80 se desarrolló SQL (lenguaje de consulta de estructura), un lenguaje que permite consultar y hacer modificaciones (dentro de una base de datos) de forma relativamente sencilla.
 Permitía analizar gran cantidad de datos y especificar varios tipos de operaciones con una misma información.
