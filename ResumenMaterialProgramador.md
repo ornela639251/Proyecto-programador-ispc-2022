@@ -480,10 +480,10 @@ En las bases de datos se ha establecido el aspecto de un diseño. Es un ciclo de
 La metodología de diseño de bases de datos relacionales se ha consolidado a lo largo de los años satisfaciendo las propiedades de generalidad (independencia de la plataforma hardware/software), calidad del producto (precisión, completitud y eficacia) y facilidad de uso.
  
 Consta de las siguientes etapas:
-1. Diseño conceptual. Su objetivo es definir las entidades y las relaciones entre ellos de forma abstracta..
-2. Diseño lógico. Su objetivo es definir el esquema de la base de datos según el modelo que implementa el SGBD objetivo. 
-3. Diseño físico. Su objetivo es definir el esquema físico de la base de datos de forma que se den todas las instrucciones para que un DBA pueda implementar la base de datos sin ninguna ambigüedad. 
-3.2. **Diseño conceptual**
+1. Diseño conceptual: Su objetivo es definir las entidades y las relaciones entre ellos de forma abstracta.
+2. Diseño lógico: Su objetivo es definir el esquema de la base de datos según el modelo que implementa el SGBD objetivo. 
+3. Diseño físico: Su objetivo es definir el esquema físico de la base de datos de forma que se den todas las instrucciones para que un DBA pueda implementar la base de datos sin ninguna ambigüedad. 
+5.2. **Diseño conceptual**
 En este apartado se estudia y se tiene como resultado el modelo entidad-relación que permite diseñar el esquema conceptual de una BD. A lo largo de este apartado se usará un ejemplo de aplicación correspondiente a las necesidades de una secretaría de un centro docente, en la que hay alumnos matriculados en asignaturas y profesores que las imparten en ciertas aulas. Los alumnos consiguen una nota determinada en cada asignatura en que están matriculados.
  
 3.2.1. **Concepto**
